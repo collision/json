@@ -266,6 +266,7 @@ module JSON
           end
 
           def json_transform(state)
+            return '{}' if empty?
             delim = ','
             delim << state.object_nl
             result = '{'
@@ -305,6 +306,7 @@ module JSON
           private
 
           def json_transform(state)
+            return '[]' if empty?
             delim = ','
             delim << state.array_nl
             result = '['
